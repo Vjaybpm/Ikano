@@ -1,0 +1,24 @@
+{
+  "template":    "react_library",
+  "name":        "@fusionconfig/react_components",
+  "description": "Fairly generic react components for use in fusion projects",
+  "packageJson": {
+    "dependencies":    {
+      "@laoban/utils": "1.4.51"
+    },
+    "devDependencies": {},
+    "bin":             {
+      "fusion": "dist/index.js"
+    }
+  },
+  "links":       [
+    "@fusionconfig/config",
+    "@fusionconfig/jsonata",
+    "@fusionconfig/utils"
+  ],
+  "guards":      {
+    "compile": true,
+    "publish": true,
+    "test":    false
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "loan_application_id": "APP003",
+  "type": "mortgage",
+  "amount": 300000,
+  "currency": "GBP",
+  "applicant_info": {
+    "name": "Alice Johnson",
+    "dob": "1990-08-15",
+    "income": 100000,
+    "address": "789 Maple Road, Springfield, LN, S1 2AB, UK"
+  },
+  "property_info": {
+    "address": "22 Acacia Avenue, Springfield, LN, S2 3BC, UK",
+    "value": 350000
+  }
+}

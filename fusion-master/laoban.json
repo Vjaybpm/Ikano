@@ -1,0 +1,58 @@
+{
+  "packageManager": "yarn",
+  "parents":        [
+    "@laoban@/laoban.json/core.laoban.json",
+    "@laoban@/laoban.json/javascript.laoban.json",
+    "@laoban@/laoban.json/typescript.laoban.json",
+    "@laoban@/laoban.json/typescript.publish.laoban.json",
+    "@laoban@/laoban.json/react.laoban.json"
+  ],
+  "properties":     {
+    "license":       "MIT",
+    "repository":    "git@github.com:intellimaintain/intellimaintain.git",
+    "laobanVersion": "1.4.40"
+  },
+  "templates":      {
+    "typescript":    "templates/typescript",
+    "react":         "templates/react",
+    "react_library": "templates/react_library"
+  },
+  "defaultEnv":     {
+    "NPM_TOKEN": ""
+  },
+  "scripts":        {
+    "compile":    {
+      "description": "Compiles the projects",
+      "inLinksOrder": true,
+      "guard":       {"value": "${packageDetails.guards.compile}", "default": true},
+      "commands":    [{"name": "compile", "command": "tsc  --outDir dist", "status": true}]
+    },
+    "ls-react": {
+      "description": "Lists all the react projects",
+      "commands":    [
+        {
+          "guard":   "${packageDetails.guards.react}",
+          "command": "js:process.cwd()"
+        }
+      ]
+    },
+    "ls-build": {
+      "description": "Lists all the  projects that will be built",
+      "commands":    [
+        {
+          "guard":   "${packageDetails.guards.react}",
+          "command": "js:process.cwd()"
+        }
+      ]
+    },
+    "build":    {
+      "description": "Packages the react projects",
+      "commands":    [
+        {
+          "guard":   "${packageDetails.guards.react}",
+          "command": "yarn run build"
+        }
+      ]
+    }
+  }
+}

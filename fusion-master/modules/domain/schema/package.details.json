@@ -1,0 +1,20 @@
+{
+  "template":    "typescript",
+  "name":        "@fusionconfig/schema",
+  "description": "accessing schemas",
+  "packageJson": {
+    "dependencies":    {
+      "@laoban/utils":           "1.4.51",
+      "@itsmworkbench/urlstore": "0.0.30"
+    },
+    "devDependencies": {
+    }
+  },
+  "links":       [
+  ],
+  "guards":      {
+    "compile": true,
+    "publish": true,
+    "test":    false
+  }
+}

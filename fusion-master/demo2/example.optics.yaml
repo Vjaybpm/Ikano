@@ -1,0 +1,19 @@
+#An optics to convert
+# - name
+# - address
+# - phones
+
+# Imagine we have three variables: name/phones/address
+title: ${name.title}
+firstName: ${name.firstName}
+lastName: ${name.lastName}
+name: ${join.. ' ', name.firstName, name.lastName} # Note that this is not perfectly bidirectional. But it's not bad
+address: ${join.. ' ', address.street, address.houseNumber, address.city, address.canton, address.postalCode, address.zipCode, address.country}
+
+# So instead of this being a 'get me the data' this can be 'get me a function'. We have getters and setters. Most will be codec. Some just setters
+
+#This is very declarative. Some functions allow you to be a lens. Others are only 'getters' (perhaps there are only setter functions too)
+
+# Say we are calling equifax_creditCheck. We have a list of lens that we need, and declaratively we can use them for the output.
+# If some lens are composite that's OK, we can can back to the list they need too... and make the big list
+

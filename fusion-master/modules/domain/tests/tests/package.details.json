@@ -1,0 +1,21 @@
+{
+  "template":    "typescript",
+  "name":        "@fusionconfig/tests",
+  "description": "the interface for the tests",
+  "packageJson": {
+    "dependencies":    {
+      "@laoban/utils":           "1.4.51",
+      "@itsmworkbench/urlstore": "0.0.30"
+    },
+    "devDependencies": {
+    }
+  },
+  "links":       [
+    "@fusionconfig/config"
+  ],
+  "guards":      {
+    "compile": true,
+    "publish": true,
+    "test":    false
+  }
+}

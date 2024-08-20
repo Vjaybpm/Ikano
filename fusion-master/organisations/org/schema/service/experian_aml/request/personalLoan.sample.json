@@ -1,0 +1,12 @@
+{
+  "loan_application_id": "APP001",
+  "type": "personal",
+  "amount": 25000,
+  "currency": "USD",
+  "applicant_info": {
+    "name": "John Doe",
+    "dob": "1985-04-12",
+    "income": 75000,
+    "address": "123 Elm Street, Anytown, CA, 90210, US"
+  }
+}

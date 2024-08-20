@@ -1,0 +1,20 @@
+{
+  "template":    "typescript",
+  "name":        "@fusionconfig/workflow",
+  "description": "indexing data",
+  "packageJson": {
+    "dependencies":    {
+      "@laoban/utils": "1.4.51"
+    },
+    "devDependencies": {
+    }
+  },
+  "links":       [
+    "@fusionconfig/activities"
+  ],
+  "guards":      {
+    "compile": true,
+    "publish": true,
+    "test":    false
+  }
+}

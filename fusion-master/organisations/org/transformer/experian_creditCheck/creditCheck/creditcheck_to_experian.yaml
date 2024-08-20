@@ -1,0 +1,6 @@
+version: 1
+type: 'jsonata'
+from:  itsm/org/schema/task/creditCheck/request
+to: itsm/org/schema/service/experian_creditCheck/request
+jsonata: |
+  $

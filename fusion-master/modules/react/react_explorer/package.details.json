@@ -1,0 +1,30 @@
+{
+  "template":    "react_library",
+  "name":        "@fusionconfig/react_explorer",
+  "description": "a file explorer like component",
+  "packageJson": {
+    "dependencies":    {
+      "jsonata":                   "^v2.0.4",
+      "@mui/x-tree-view":          "^7.1.1",
+      "@react-spring/web":         "^9.7.3",
+      "@laoban/utils":             "1.4.51",
+      "@itsmworkbench/jsyaml":     "0.0.30",
+      "@itsmworkbench/eventstore": "0.0.30",
+      "@monaco-editor/react":      "^4.6.0"
+    },
+    "devDependencies": {},
+    "bin":             {
+      "fusion": "dist/index.js"
+    }
+  },
+  "links":       [
+    "@fusionconfig/config",
+    "@fusionconfig/jsonata",
+    "@fusionconfig/utils"
+  ],
+  "guards":      {
+    "compile": true,
+    "publish": true,
+    "test":    false
+  }
+}

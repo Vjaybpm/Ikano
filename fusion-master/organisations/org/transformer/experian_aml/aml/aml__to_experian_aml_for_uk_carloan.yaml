@@ -1,0 +1,21 @@
+version: 1
+type: 'jsonata'
+from: itsm/org/schema/task/aml/carLoan/uk/request
+to: itsm/org/schema/service/experian_aml/request
+jsonata: |
+  {
+    "loan_application_id": applicationId,
+    "type": $lowercase($substringBefore(loanType, " ")),
+    "amount": amountRequested,
+    "currency": currency,
+    "applicant_info": {
+      "name": applicant.name,
+      "dob": applicant.dateOfBirth,
+      "income": applicant.annualIncome,
+      "address": applicant.address.street & ", " & 
+               applicant.address.city & ", " & 
+               applicant.address.state & ", " & 
+               applicant.address.postalCode & ", " &
+                        applicant.address.country
+    }
+  }

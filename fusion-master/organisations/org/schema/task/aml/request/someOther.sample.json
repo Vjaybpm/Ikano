@@ -1,0 +1,19 @@
+{
+  "applicationId": "APP001",
+  "loanType": "Personal Loan",
+  "amountRequested": 25000,
+  "currency": "USD",
+  "applicant": {
+    "name": "John Doe",
+    "dateOfBirth": "1985-04-12",
+    "employmentStatus": "Employed",
+    "annualIncome": 75000,
+    "address": {
+      "street": "123 Elm Street",
+      "city": "Anytown",
+      "state": "CA",
+      "country": "US",
+      "postalCode": "90210"
+    }
+  }
+}

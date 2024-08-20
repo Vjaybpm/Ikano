@@ -1,0 +1,28 @@
+{
+  "template":    "typescript",
+  "name":        "@fusionconfig/api",
+  "description": "The api for the fusionconfig project",
+  "packageJson": {
+    "dependencies":    {
+      "@runbook/utils":              "0.3.15",
+      "@laoban/utils":               "1.4.51",
+      "@itsmworkbench/apiurlstore":"0.0.30",
+      "@itsmworkbench/nodeurlstore": "0.0.30",
+      "@itsmworkbench/cli":         "0.0.30",
+      "@itsmworkbench/shellgit":   "0.0.30",
+      "@itsmworkbench/jsyaml":   "0.0.30",
+      "@itsmworkbench/koa":        "0.0.30"
+    },
+    "devDependencies": {}
+  },
+  "links":       [
+    "@fusionconfig/alldomains",
+    "@fusionconfig/config",
+    "@fusionconfig/fileopsconfig"
+  ],
+  "guards":      {
+    "compile": true,
+    "publish": true,
+    "test":    false
+  }
+}

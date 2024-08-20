@@ -1,0 +1,21 @@
+{
+  "template":    "typescript",
+  "name":        "@fusionconfig/jsonata",
+  "description": "the precise version of jsonata we use: implements our abstraction",
+  "packageJson": {
+    "dependencies":    {
+      "@laoban/utils":           "1.4.51",
+      "@itsmworkbench/urlstore": "0.0.30",
+        "jsonata":                "2.0.4"
+    },
+    "devDependencies": {
+    }
+  },
+  "links":       [
+  ],
+  "guards":      {
+    "compile": true,
+    "publish": true,
+    "test":    false
+  }
+}

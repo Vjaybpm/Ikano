@@ -1,0 +1,6 @@
+version: 1
+type: 'jsonata'
+to: itsm/org/schema/task/creditCheck/response
+from: itsm/org/schema/service/equifax_creditCheck/response
+jsonata: |
+  $

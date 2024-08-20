@@ -1,0 +1,57 @@
+version: 1
+
+parameters:
+  product:
+    legal:
+      - instantLoan
+      - mortgage
+      - creditCard
+      - carLoan
+  geo:
+    legal:
+      - uk
+      - sw
+      - ca
+  channel:
+    legal:
+      - customerPortal
+      - merchantPortal
+      - selfServicePortal
+
+# result of demo1. Very few permutations. So should have option of being explicit
+#permutations:
+#  - geo: uk
+#    product: instantLoan
+#    channel: *
+#  - geo: sw
+#    product: ca
+#    channel: customerPortal
+
+
+plugins:
+  - addKafkaSchemasToServices # Looks in where.services and adds the schema id and name. There is no 'search' as it's 'one and only one' never mind the axes of complexity
+  - addTaskDetails            # Looks in where.tasks (a list) and adds the name of the 'axes relevant' data and adds the topic names and schemas for the request and response
+  - addTransformersToTasks    # Looks in all the transformers to find the relevant transformer for the task
+  - removeKey(services)
+  - removeKey(parameters)
+  - removeKey(hierarchy)
+  - removeKey(where)
+  - removeKey(plugins)
+
+bpmn:
+  model: camunda # We'd normally leave it blank, but this is for discussion and for the POC it's useful anyway
+
+
+hierarchy:
+  "All the services we can use": "services.yaml"
+  "All the tasks that are in Camunda": "tasks.yaml"
+  "Product Specific Configuration": "${product}.yaml"
+  "Geo Specific Configuration": "geo/${geo}/${geo}_overrides.yaml"
+  "This Product in This Country": "geo/${geo}/${product}/${geo}_${product}.yaml"
+  "Channel Specific Configuration": "geo/${geo}/${product}/${channel}/${geo}_${product}_${channel}.yaml"
+
+#Naming
+# Tasks are external tasks in Camunda
+# Services are kafka topics that we send things to
+
+

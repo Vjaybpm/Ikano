@@ -1,0 +1,6 @@
+version: 1
+type: 'jsonata'
+from:  itsm/org/schema/task/pricing/request
+to:  itsm/org/schema/service/internal_pricingService/request
+jsonata: |
+  $

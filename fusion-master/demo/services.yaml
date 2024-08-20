@@ -1,0 +1,61 @@
+version: 1
+
+# Here we are defining all the services that are available in the system.
+# A service is two topics in Kafka. One for requests and one for responses.
+
+# The post processor will add the schema id and name
+#   the name is the name of the schema in a way that the schema registry can find it
+#   the id is the precise current value of the schema (based on the git hash)
+
+where:
+   services: "service/<service>/<reqOrResp>" # This is the naming convention. So if look at the first entry in capabilities services.equifax_creditCheck.request or services.equifax_creditCheck.response
+
+services:
+  experian_aml:
+    serviceDescription: "AML service provided by Experian for real-time background checks."
+    request:
+      topic: "experian.aml.request"
+    response:
+      topic: "experian.aml.response"
+
+  equifax_creditCheck:
+    serviceDescription: "Credit score checking service provided by Equifax."
+    request:
+      topic: "equifax.creditScore.request"
+    response:
+      topic: "equifax.creditScore.response"
+
+  experian_creditCheck:
+    serviceDescription: "Credit score checking service provided by Experian."
+    request:
+      topic: "experian.creditScore.request"
+    response:
+      topic: "experian.creditScore.response"
+
+  internal_signatureVerification:
+    serviceDescription: "Internal signature verification service for document signing."
+    request:
+      topic: "internal.signatureVerification.request"
+    response:
+      topic: "internal.signatureVerification.response"
+
+  internal_pricingService:
+    serviceDescription: "Internal pricing service for product and service pricing adjustments."
+    request:
+      topic: "internal.pricing.request"
+    response:
+      topic: "internal.pricing.response"
+
+  internal_carloan_PricingService:
+    serviceDescription: "Internal pricing service for carloans"
+    request:
+      topic: "internal.pricing.request"
+    response:
+      topic: "internal.pricing.response"
+
+  internal_limitManagement:
+    serviceDescription: "Limit management service for transaction and account limits."
+    request:
+      topic: "internal.limitManagement.request"
+    response:
+      topic: "internal.limitManagement.response"

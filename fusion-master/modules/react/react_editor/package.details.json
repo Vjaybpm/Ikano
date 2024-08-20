@@ -1,0 +1,25 @@
+{
+  "template":    "react_library",
+  "name":        "@fusionconfig/react_editor",
+  "description": "the multifile editor for fusionconfig. Uses monaco-editor-react",
+  "packageJson": {
+    "dependencies":    {
+      "@laoban/utils":        "1.4.51",
+      "@monaco-editor/react": "^4.6.0"
+    },
+    "devDependencies": {},
+    "bin":             {
+      "fusion": "dist/index.js"
+    }
+  },
+  "links":       [
+    "@fusionconfig/config",
+    "@fusionconfig/jsonata",
+    "@fusionconfig/utils"
+  ],
+  "guards":      {
+    "compile": true,
+    "publish": true,
+    "test":    false
+  }
+}

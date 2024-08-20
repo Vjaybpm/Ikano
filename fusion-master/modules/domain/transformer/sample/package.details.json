@@ -1,0 +1,20 @@
+{
+  "template":    "typescript",
+  "name":        "@fusionconfig/sample",
+  "description": "These are samples of the data for a schema",
+  "packageJson": {
+    "dependencies":    {
+      "@laoban/utils":           "1.4.51",
+      "@itsmworkbench/urlstore": "0.0.30"
+    },
+    "devDependencies": {
+    }
+  },
+  "links":       [
+  ],
+  "guards":      {
+    "compile": true,
+    "publish": true,
+    "test":    false
+  }
+}

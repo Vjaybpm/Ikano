@@ -1,0 +1,23 @@
+{
+  "template":    "typescript",
+  "name":        "@itsmworkbench/dependentdata",
+  "description": "Often some data is dependendent on other data. Needs nuking or reloading when earlier changes",
+  "packageJson": {
+    "dependencies":    {
+      "node":                 "^v14.4.0",
+      "@laoban/utils":        "1.4.51",
+      "@focuson/lens":        "1.44.3",
+      "@itsmworkbench/utils": "0.0.30"
+    },
+    "devDependencies": {},
+    "browser":         {
+      "child_process": false
+    }
+  },
+  "links":       [],
+  "guards":      {
+    "compile": true,
+    "publish": true,
+    "test":    false
+  }
+}

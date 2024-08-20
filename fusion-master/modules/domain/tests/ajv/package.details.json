@@ -1,0 +1,23 @@
+{
+  "template":    "typescript",
+  "name":        "@fusionconfig/ajv",
+  "description": "using ajv for schema validation",
+  "packageJson": {
+    "dependencies":    {
+      "@laoban/utils":           "1.4.51",
+      "@itsmworkbench/urlstore": "0.0.30",
+      "ajv":                     "8.12.0"
+    },
+    "devDependencies": {
+    }
+  },
+  "links":       [
+    "@fusionconfig/config",
+    "@fusionconfig/tests"
+  ],
+  "guards":      {
+    "compile": true,
+    "publish": true,
+    "test":    false
+  }
+}

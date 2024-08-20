@@ -1,0 +1,6 @@
+version: 1
+type: 'jsonata'
+from: itsm/org/schema/service/experian_aml/response
+to: itsm/org/schema/task/aml/carLoan/uk/response
+jsonata: |
+  $

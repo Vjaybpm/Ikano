@@ -1,0 +1,19 @@
+{
+  "template":    "typescript",
+  "name":        "@fusionconfig/timeservice",
+  "description": "a timeservice for synchronising multiple services based on file system timestamps. Granularity will be around 1 second",
+  "packageJson": {
+    "dependencies":    {
+      "@laoban/utils": "1.4.51"
+    },
+    "devDependencies": {
+    }
+  },
+  "links":       ["@fusionconfig/activities"
+  ],
+  "guards":      {
+    "compile": true,
+    "publish": true,
+    "test":    false
+  }
+}

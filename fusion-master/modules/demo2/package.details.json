@@ -1,0 +1,24 @@
+{
+  "template":    "typescript",
+  "name":        "demo2",
+  "description": "Like heira but for whole files",
+  "packageJson": {
+    "dependencies":    {
+      "@laoban/variables":           "1.4.51",
+      "@laoban/utils":               "1.4.51"
+    },
+    "devDependencies": {},
+    "bin":             {
+      "fusion": "dist/index.js"
+    }
+  },
+  "links":       [
+
+    "@fusionconfig/utils"
+  ],
+  "guards":      {
+    "compile": true,
+    "publish": true,
+    "test":    false
+  }
+}

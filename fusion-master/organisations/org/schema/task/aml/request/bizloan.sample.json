@@ -1,0 +1,19 @@
+{
+  "applicationId": "APP002",
+  "loanType": "Business Loan",
+  "amountRequested": 500000,
+  "currency": "EUR",
+  "applicant": {
+    "businessName": "Tech Innovations Inc.",
+    "registrationNumber": "EU123456",
+    "industry": "Technology",
+    "annualRevenue": 5000000,
+    "address": {
+      "street": "456 Tech Park Ave",
+      "city": "Innovate City",
+      "state": "Berlin",
+      "country": "DE",
+      "postalCode": "10115"
+    }
+  }
+}

@@ -1,0 +1,5 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="run.file.system.ts" type="NodeJSConfigurationType" nameIsGenerated="true" node-parameters="-r ts-node/register" path-to-js-file="modules/temporallite/timeservice/src/run.file.system.ts" working-dir="$PROJECT_DIR$">
+    <method v="2" />
+  </configuration>
+</component>

@@ -1,0 +1,7 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Gui and API" type="CompoundRunConfigurationType">
+    <toRun name="React" type="JavascriptDebugType" />
+    <toRun name="api" type="js.build_tools.npm" />
+    <method v="2" />
+  </configuration>
+</component>

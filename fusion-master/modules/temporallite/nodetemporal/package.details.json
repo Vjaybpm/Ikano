@@ -1,0 +1,19 @@
+{
+  "template":    "typescript",
+  "name":        "@fusionconfig/nodetemporal",
+  "description": "Code that only runs on node for temporallite",
+  "packageJson": {
+    "dependencies":    {
+      "@laoban/utils": "1.4.51"
+    },
+    "devDependencies": {
+    }
+  },
+  "links":       ["@fusionconfig/activities"
+  ],
+  "guards":      {
+    "compile": true,
+    "publish": true,
+    "test":    false
+  }
+}

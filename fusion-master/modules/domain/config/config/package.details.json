@@ -1,0 +1,22 @@
+{
+  "template":    "typescript",
+  "name":        "@fusionconfig/config",
+  "description": "the interfaces for the configuration",
+  "packageJson": {
+    "dependencies":    {
+      "@laoban/utils":           "1.4.51",
+      "@laoban/fileops":         "1.4.51",
+      "@itsmworkbench/urlstore": "0.0.30"
+    },
+    "devDependencies": {
+      "@itsmworkbench/jsyaml": "0.0.30"
+    }
+  },
+  "links":       [
+  ],
+  "guards":      {
+    "compile": true,
+    "publish": true,
+    "test":    true
+  }
+}

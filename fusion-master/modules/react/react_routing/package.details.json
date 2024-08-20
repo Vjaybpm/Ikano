@@ -1,0 +1,22 @@
+{
+  "template":    "react_library",
+  "name":        "@fusionconfig/react_routing",
+  "description": "like react-router but uses the state as the source of truth so we have atomic updates",
+  "packageJson": {
+    "dependencies":    {
+      "@laoban/utils": "1.4.51"
+    },
+    "devDependencies": {},
+    "bin":             {
+      "fusion": "dist/index.js"
+    }
+  },
+  "links":       [
+    "@fusionconfig/utils"
+  ],
+  "guards":      {
+    "compile": true,
+    "publish": true,
+    "test":    true
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "template":    "typescript",
+  "name":        "@fusionconfig/indexing",
+  "description": "indexing data",
+  "packageJson": {
+    "dependencies":    {
+      "@laoban/utils": "1.4.51"
+    },
+    "devDependencies": {
+    }
+  },
+  "links":       [
+  ],
+  "guards":      {
+    "compile": true,
+    "publish": true,
+    "test":    false
+  }
+}

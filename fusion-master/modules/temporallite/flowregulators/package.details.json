@@ -1,0 +1,21 @@
+{
+  "template":    "typescript",
+  "name":        "@fusionconfig/flowregulator",
+  "description": "sets target numbers of active work based on load lag",
+  "packageJson": {
+    "dependencies":    {
+      "@laoban/utils":     "1.4.51",
+      "@laoban/variables": "1.4.51"
+    },
+    "devDependencies": {
+    }
+  },
+  "links":       [
+    "@fusionconfig/indexing"
+  ],
+  "guards":      {
+    "compile": true,
+    "publish": true,
+    "test":    false
+  }
+}

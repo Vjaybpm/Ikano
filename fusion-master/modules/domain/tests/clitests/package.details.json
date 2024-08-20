@@ -1,0 +1,22 @@
+{
+  "template":    "typescript",
+  "name":        "@fusionconfig/clitests",
+  "description": "the koa code fortests",
+  "packageJson": {
+    "dependencies":    {
+      "@laoban/utils":      "1.4.51",
+      "@itsmworkbench/cli": "0.0.30"
+    },
+    "devDependencies": {
+    }
+  },
+  "links":       [
+    "@fusionconfig/config",
+    "@fusionconfig/tests"
+  ],
+  "guards":      {
+    "compile": true,
+    "publish": true,
+    "test":    false
+  }
+}

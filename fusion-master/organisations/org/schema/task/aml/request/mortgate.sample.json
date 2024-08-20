@@ -1,0 +1,29 @@
+{
+  "applicationId": "APP003",
+  "loanType": "Mortgage",
+  "amountRequested": 300000,
+  "currency": "GBP",
+  "applicant": {
+    "name": "Alice Johnson",
+    "dateOfBirth": "1990-08-15",
+    "employmentStatus": "Self-Employed",
+    "annualIncome": 100000,
+    "address": {
+      "street": "789 Maple Road",
+      "city": "Springfield",
+      "state": "LN",
+      "country": "UK",
+      "postalCode": "S1 2AB"
+    }
+  },
+  "property": {
+    "address": {
+      "street": "22 Acacia Avenue",
+      "city": "Springfield",
+      "state": "LN",
+      "country": "UK",
+      "postalCode": "S2 3BC"
+    },
+    "valuation": 350000
+  }
+}

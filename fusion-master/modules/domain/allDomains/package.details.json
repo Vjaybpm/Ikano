@@ -1,0 +1,27 @@
+{
+  "template":    "typescript",
+  "name":        "@fusionconfig/alldomains",
+  "description": "where all the domains are combined",
+  "packageJson": {
+    "dependencies":    {
+      "@laoban/utils":           "1.4.51",
+      "@itsmworkbench/urlstore": "0.0.30",
+      "@itsmworkbench/yaml":     "0.0.30"
+    },
+    "devDependencies": {
+    }
+  },
+  "links":       [
+    "@fusionconfig/config",
+    "@fusionconfig/schema",
+    "@fusionconfig/tasks",
+    "@fusionconfig/sample",
+    "@fusionconfig/services",
+    "@fusionconfig/transformer"
+  ],
+  "guards":      {
+    "compile": true,
+    "publish": true,
+    "test":    false
+  }
+}

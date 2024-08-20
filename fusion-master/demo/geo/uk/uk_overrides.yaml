@@ -1,0 +1,6 @@
+version: 1
+
+tasks:
+     creditCheck:
+          taskDescription: "Credit check for customer. In the UK we use Equifax"
+          service: equifax_creditCheck

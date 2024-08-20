@@ -1,0 +1,40 @@
+{
+  "template":    "typescript",
+  "name":        "fusionconfig",
+  "description": "Like heira but for whole files",
+  "packageJson": {
+    "dependencies":    {
+      "@itsmworkbench/cli":          "0.0.30",
+      "@itsmworkbench/commander12":  "0.0.30",
+      "@itsmworkbench/jsyaml":       "0.0.30",
+      "@itsmworkbench/nodeurlstore": "0.0.30",
+      "@laoban/filesops-node":       "1.4.51",
+      "@laoban/variables":           "1.4.51",
+      "@laoban/utils":               "1.4.51"
+    },
+    "devDependencies": {},
+    "bin":             {
+      "fusion": "dist/index.js"
+    },
+    "scripts":         {
+      "api": "cd ../.. && ts-node modules/fusionconfig/index.ts api -d demo -u organisations --debug --cache"
+    }
+  },
+  "links":       [
+    "@fusionconfig/alldomains",
+    "@fusionconfig/ajv",
+    "@fusionconfig/api",
+    "@fusionconfig/apitests",
+    "@fusionconfig/config",
+    "@fusionconfig/clitests",
+    "@fusionconfig/fileopsconfig",
+    "@fusionconfig/jsonata",
+    "@fusionconfig/jsondiffpatch",
+    "@fusionconfig/utils"
+  ],
+  "guards":      {
+    "compile": true,
+    "publish": true,
+    "test":    false
+  }
+}

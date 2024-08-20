@@ -1,0 +1,6 @@
+version: 1
+type: 'jsonata'
+from: itsm/org/schema/service/internal_signatureVerification/response
+to:  itsm/org/schema/task/signatureVerification/response
+jsonata: |
+  $

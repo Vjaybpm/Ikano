@@ -1,0 +1,8 @@
+# just uses defaults
+version: 1
+
+tasks:
+  creditCheck:
+    taskDescription: "Credit check for customer - UK uses Equifax for instant loans"
+    service: equifax_creditCheck
+    variables: [ 'userdata' ]

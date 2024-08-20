@@ -1,0 +1,177 @@
+version: 1
+
+data: # This is a list of all the bits that can be used
+  global: #The name space we put most primitives in
+    name:
+      blob:
+        type: blob
+      firstName:
+        type: string
+      lastName:
+        type: string
+      title:
+        type: string
+      tussenvoegsel:
+        type: string
+        comment: "Dutch prefix in a surname"
+    address:
+      blob:
+        type: blob
+      street:
+        type: string
+      houseNumber:
+        type: string
+      city:
+        type: string
+      canton:
+        type: string
+      postalCode:
+        type: string
+      zipCode:
+        type: string
+      country:
+        type: string
+    phone:
+      blob:
+        type: blob
+      phone:
+        type: composite
+        madeof:
+          -global.phone.phoneType
+          -global.phone.phoneNumber
+      phoneType:
+        type:string
+      phoneNumber:
+        type: string
+    aml:
+      colour:
+        enum: [ red, amber, green ]
+  uk:
+    name:
+      type: composite
+      exampleof: global.name
+      madeof:
+        - global.title
+        - global.firstName
+        - global.lastName
+    address:
+      type: composite
+      exampleof: global.address
+      madeof:
+        - name: global.houseNumber
+          optional: true
+        - global.street
+        - global.city
+        - global.postalCode
+  nl:
+    name:
+      type: composite
+      exampleof: global.name
+      madeof:
+        - global.title
+        - global.firstName
+        - global.tussenvoegsel
+        - global.lastName
+  aml:
+    request: # Basically we are saying we can talk about aml.request and aml.response, but we know nothing about them
+      type: blob
+    response:
+      type: blob
+  aml_ef: # example of a namespace. This is a concrete service.
+    requestSchema: # should have income data as well... will add in a while when get name/address sorted
+      type: composite
+      exampleof: aml.request
+      madeof:
+        - uk.name
+        - uk.address
+        - global.phone[]
+    responseSchema:
+      type: composite
+      exampleof: aml.response
+      madeof:
+        - global.name
+        - global.address
+        - global.aml.colour
+
+
+service:
+  aml_ef:
+    type: kafkaRequestResponse
+    request:
+      topic: "experian.aml.request"
+      data: aml_ef.requestSchema # Kind of want to say 'aml.request' but not sure if need it
+      schema: https://example.com/schemas/aml_ef.requestSchema
+    #      convertor:  -- this will be added dynamically. it is the code that turns the data we have into the target schema
+    #        type: npm
+    #        name: @example/aml_ef-request
+    response:
+      topic: "experian.aml.response"
+      data: aml_ef.responseSchema
+      schema: https://example.com/schemas/aml_ef.responseSchema
+#      convertor:  -- this will be added dynamically. it is the code that turns the data we have into the target schema
+#        type: npm
+#        name: @example/aml_ef-response
+
+convertors: # This says go to npm, get them. They should explain what they do to the system.
+  npm:
+    - @example/aml_ef-request # This knows how to turn an aml_ef.requestSchema into https://example.com/schemas/aml_ef.requestSchema
+    - @example/aml_ef-response # This knows how to turn an aml_ef.responseSchema into https://example.com/schemas/aml_ef.responseSchema
+
+components:
+  npm:
+    - @some/car-loan-data
+    - @some/uk-name
+    - @some/uk-address
+    - @some/uk-phone
+
+react:
+  uk:
+    name:
+      type: npm
+      name: @some/uk-name
+      modes: [ 'create', 'edit', 'view-summary', 'view-full' ]
+
+#Now in the workflow declaration
+# when we start we accumulate data
+# For example we have a gui that asks for the name, address and phone numbers
+# The thing is ... all we know is it's a name, address and phone number. We don't know what instantiation it has
+
+bpmn: # this is just to represent the data in the BPMN itself. This isn't a file that is used by the system
+  variables:
+    name: global.name.blob                   # will be replaced by uk.name.blob
+    address: global.address.blob             # will be replaced by uk.address.blob
+    phones: global.phone.blob                 # will be left
+    color: global.aml.color                   # will be left
+  start:
+    type: start
+  enterdata:
+    type: form
+    name: enter.carloan.data                 # Discover for 'car-load-data
+    mode: create
+    injected: # These get injected into the form. Although they are just a string, they are really an object and this is a short form
+      - name                                 # we will discover @some/uk-name
+      - address                              # we will discover @some/uk-address
+      - phones                               # we will discover @some/uk-phone
+  aml:
+    type: service
+    request:                                # Need a convertor.
+      type: aml_ef.request.blob
+      from:                                 # This bit is critical. Need to work out 'what we have' and 'what convertors we have' and negotiate
+        - name                              # we know it's a uk.name.blob, but also the fields in it: uk.name.title, uk.name.firstName, uk.name.lastName
+        - address                           # we have list of convertors and can scan down it until we find 'the best one'
+        - phones
+    response:
+      type: aml_ef.response.blob
+      to:
+        - color
+  exit:
+    type: end
+
+#Observation
+#     A transformation is just an optics
+#
+
+
+    # NOTE at this point we don't about the actual service. That's added later
+    # When we 'compile' we can replace this by the actual values
+

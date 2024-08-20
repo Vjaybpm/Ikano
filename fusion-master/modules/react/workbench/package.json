@@ -1,0 +1,90 @@
+{
+  "name": "@fusionconfig/workbench",
+  "description": "Fusion Workbench. Gui for working with transformations and schemas",
+  "version": "0.0.9",
+  "bin": {
+    "fusion": "dist/index.js"
+  },
+  "browserslist": {
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ],
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ]
+  },
+  "dependencies": {
+    "@laoban/utils": "1.4.45",
+    "@itsmworkbench/browserurlstore": "0.0.30",
+    "@itsmworkbench/events": "0.0.30",
+    "@itsmworkbench/dependentdata": "0.0.9",
+    "@fusionconfig/config": "0.0.9",
+    "@fusionconfig/jsonata": "0.0.9",
+    "@fusionconfig/react_components": "0.0.9",
+    "@fusionconfig/react_explorer": "0.0.9",
+    "@fusionconfig/react_editor": "0.0.9",
+    "@fusionconfig/react_routing": "0.0.9",
+    "@fusionconfig/utils": "0.0.9",
+    "@fusionconfig/tests": "0.0.9",
+    "@fusionconfig/browsertests": "0.0.9",
+    "@fusionconfig/i18n": "0.0.9",
+    "debug": "^4.3.4",
+    "@emotion/react": "^11.11.3",
+    "@emotion/styled": "^11.11.0",
+    "@focuson/lens": "1.44.3",
+    "@focuson/state": "1.44.3",
+    "@mui/material": "^5.15.10",
+    "@mui/icons-material": "^5.15.10",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@babel/preset-react": "^7.23.3",
+    "@types/react": "^18.2.56",
+    "@types/react-dom": "^18.2.19",
+    "parcel": "^2.11.0",
+    "typescript": "^5.3.3"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ],
+    "overrides": [
+      {
+        "files": [
+          "**/*.stories.*"
+        ],
+        "rules": {
+          "import/no-anonymous-default-export": "off"
+        }
+      }
+    ]
+  },
+  "files": [
+    "dist/index.js",
+    "dist/index.d.ts",
+    "dist/src/",
+    "build/"
+  ],
+  "keywords": [
+    "react",
+    "runbook"
+  ],
+  "license": "MIT",
+  "peerDependencies": {},
+  "repository": "git@github.com:intellimaintain/intellimaintain.git",
+  "scripts": {
+    "start": "parcel src/index.html",
+    "debug": "parcel serve src/index.html --no-cache",
+    "build": "parcel build src/index.html",
+    "test": "jest --config jest.config.json",
+    "test:watch": "npm run test -- --watch",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
+  }
+}

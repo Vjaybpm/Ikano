@@ -1,0 +1,31 @@
+{
+  "private": true,
+  "workspaces": [
+    "modules/**"
+  ],
+  "resolutions": {
+    "**/react": "18.2.0",
+    "**/react-dom": "18.2.0"
+  },
+  "devDependencies": {
+    "@parcel/packager-raw-url": "^2.11.0",
+    "@parcel/transformer-webmanifest": "^2.11.0",
+    "assert": "^2.0.0",
+    "buffer": "^5.5.0||^6.0.0",
+    "crypto-browserify": "^3.12.0",
+    "events": "^3.1.0",
+    "https-browserify": "^1.0.0",
+    "os-browserify": "^0.3.0",
+    "path-browserify": "^1.0.0",
+    "process": "^0.11.10",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "stream-http": "^3.1.0",
+    "ts-node": "^10.9.2",
+    "url": "^0.11.0",
+    "util": "^0.12.3"
+  },
+  "dependencies": {
+    "openai": "^4.28.4"
+  }
+}

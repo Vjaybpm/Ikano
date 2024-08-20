@@ -1,0 +1,49 @@
+# These are Camunda external tasks and correspond to blocks on the BPMN diagram.
+# Here we say the default service to use for each task.
+# This can be overriden at any level in the hierarchy. i.e. in the uk we could pick a different aml service.
+# And in the uk for a carloan with a merchant we could pick a different aml service again.
+
+# For each of these tasks at run time we need
+#  - the topic name to send the request to
+#  - the schema to use for the request (we record the name and the precise value using the id)
+#  - the schema to use for the response (we record the name and the precise value using the id)
+#  - the topic name to listen for the response on
+
+# these details are filled in by the post processor so we don't have to do this manually
+
+
+# Unlike kafka we have a chain of responsibility to find the 'right' task description. We start most specific. We use a different templating than the config story for task
+# This is because in different countries/products we might choose to have a different service to implement the task.
+# Consider tweaking this... the ${} and the <> is a little ugly. I am not sure if we want the two levels...
+where:
+  tasks:
+    - "task/<task>/${geo}/${product}/${channel}/<reqOrResp>"
+    - "task/<task>/${product}/${geo}/<reqOrResp>"
+    - "task/<task>/${product}/<reqOrResp>"
+    - "task/<task>/<reqOrResp>"
+
+tasks:
+  aml:
+    taskDescription: "AML check for customer"
+    service: experian_aml
+    variables: [ 'userdata' ]
+    # will change to
+#    variables:
+#        input: [ 'userdata' ] - might by 'userdata' or ['userdata1', 'userdata2']. If first don't prefix with userdata in schema
+#        output:  'amlData'
+  creditCheck:
+    taskDescription: "Credit check for customer"
+    service: experian_creditCheck
+    variables: [ 'userdata' ]
+  signatureVerification:
+    taskDescription: "Signature verification for document signing"
+    service: internal_signatureVerification
+    variables: [ 'userdata' ]
+  pricing:
+    taskDescription: "Pricing service for product and service pricing adjustments"
+    service: internal_pricingService
+    variables: [ 'userdata' ]
+#  limitManagement:
+#    taskDescription: "Limit management service for transaction and account limits"
+#    service: internal_limitManagement
+#    variables: ['userdata']
